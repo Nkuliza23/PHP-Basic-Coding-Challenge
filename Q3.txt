@@ -1,0 +1,36 @@
+MariaDB [(none)]> show databases;
++--------------------+
+| Database           |
++--------------------+
+| information_schema |
+| mysql              |
+| performance_schema |
+| phpmyadmin         |
+| test               |
++--------------------+
+5 rows in set (0.001 sec)
+
+MariaDB [(none)]> create database user;
+Query OK, 1 row affected (0.001 sec)
+
+MariaDB [(none)]> use user;
+Database changed
+MariaDB [user]> create table users (id int,name varchar(100),age int,address varchar(100));
+Query OK, 0 rows affected (0.064 sec)
+
+MariaDB [user]> insert into users (id,name,age,address) values (1,"nkuliza",21,"kicukiro");
+Query OK, 1 row affected (0.014 sec)
+
+MariaDB [user]> insert into users (id,name,age,address) values (2,"sam",21,"gasabo"),(3,"yvette",18,"masaka");
+Query OK, 2 rows affected (0.008 sec)
+Records: 2  Duplicates: 0  Warnings: 0
+
+MariaDB [user]> select * from users;
++------+---------+------+----------+
+| id   | name    | age  | address  |
++------+---------+------+----------+
+|    1 | nkuliza |   21 | kicukiro |
+|    2 | sam     |   21 | gasabo   |
+|    3 | yvette  |   18 | masaka   |
++------+---------+------+----------+
+3 rows in set (0.000 sec)
